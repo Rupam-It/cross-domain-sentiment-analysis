@@ -1,0 +1,7 @@
+# Ignore directories
+csv files/
+tsv files/
+model/
+.ipynb_checkpoints/
+# Ignore specific file
+tsvToCsv.go
