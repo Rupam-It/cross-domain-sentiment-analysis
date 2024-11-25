@@ -1,0 +1,179 @@
+/* General App Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.NavBar {
+  width: 100%;                       /* Full width of the viewport */
+  height: 200px;                      /* Fixed height for navbar */
+  background-image: url('../public/above_navbar_image2.png'); /* Reference your image */
+  background-size: cover;            /* Ensures the image covers the navbar */
+  background-position: center;       /* Centers the image */
+  background-repeat: no-repeat;      /* Prevents tiling */
+}
+.NavBar h1{
+  color: white;
+  font-size: 2.0rem;
+  margin-left: 20px;
+  text-align: center;
+}
+.NavBar span{
+  color: #20cca3;
+  font-size: 2.0rem;
+  margin-left: 20px;
+  text-align: center;
+}
+
+
+.MainContainer {
+  display: flex;
+  flex: 1;
+}
+
+/* General Sidebar Styling */
+.Sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow-y: auto; /* Auto scrollbar if content exceeds height */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full height, covering navbar */
+  z-index: 1000;
+}
+
+/* For Small Screens (Sidebar can be toggled) */
+@media (max-width: 768px) {
+  .Sidebar {
+    transform: translateX(-100%); /* Sidebar hidden initially */
+    opacity: 0; /* Hidden */
+  }
+
+  .Sidebar.sidebar-visible {
+    transform: translateX(0); /* Sidebar visible when toggled */
+    opacity: 1;
+  }
+
+  /* Adjust the content area to ensure it doesn't overlap sidebar */
+  .Content {
+    margin-left: 0;
+  }
+}
+
+/* For Large Screens (Sidebar is always visible) */
+@media (min-width: 769px) {
+  .Sidebar {
+    transform: translateX(0); /* Sidebar is always visible */
+    opacity: 1;
+  }
+}
+
+/* Sidebar Toggle Button for Small Screens */
+.Sidebar-open {
+  position: fixed;
+  top: 15px; /* Align with NavBar */
+  left: 10px;
+  background-color: #9e1ac8;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.Sidebar-open:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Content Area Styling */
+.Content {
+  flex: 1;
+  padding: 20px;
+}
+
+.Input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.result{
+  display: flex;
+  justify-content: center;
+}
+textarea {
+  width: 75%;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 10px;
+  margin-right: 11%;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Sidebar for Small Screens */
+@media (max-width: 768px) {
+  .Sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .Sidebar.sidebar-visible {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .Content {
+    margin-left: 0;
+  }
+}
+
+
+.Footer {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;    /* Vertical centering */
+  height: 50px;           /* Optional: Adjust height */
+  background-color: #f8f9fa; /* Optional: Background color */
+  font-size: 14px;        /* Optional: Font size */
+  color: #333;            /* Optional: Text color */
+}
